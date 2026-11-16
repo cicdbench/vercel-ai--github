@@ -1,0 +1,125 @@
+{
+  "provider": "github",
+  "round": "gate-r0",
+  "manifests": {
+    ".github/workflows/ci.yml": {
+      "removedTriggers": [
+        "push"
+      ],
+      "removedEnv": [],
+      "removedJobs": [
+        {
+          "id": "test_mcp_windows",
+          "reason": "non-linux"
+        },
+        {
+          "id": "test",
+          "reason": "needs-removed-job"
+        }
+      ],
+      "runsOnChanges": [
+        {
+          "job": "check",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "konsistent",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "build-examples",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "types",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "docs-site",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "build-packages",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "bundle-size",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "test_node_versions",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "test_matrix",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "test_rsc_e2e",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "test_bundlers",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "test_ai_matrix",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "test_codemod_matrix",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "load-time_matrix",
+          "from": "ubuntu-latest"
+        },
+        {
+          "job": "load-time",
+          "from": "ubuntu-latest"
+        }
+      ],
+      "localReusable": [],
+      "removedSteps": [
+        {
+          "job": "konsistent",
+          "step": "vercel/setup-turborepo-remote-cache-action@49d7b1b46ba4c9251e1977986bfe18336feabc8f",
+          "reason": "optional-secret"
+        },
+        {
+          "job": "build-examples",
+          "step": "vercel/setup-turborepo-remote-cache-action@49d7b1b46ba4c9251e1977986bfe18336feabc8f",
+          "reason": "optional-secret"
+        },
+        {
+          "job": "build-packages",
+          "step": "vercel/setup-turborepo-remote-cache-action@49d7b1b46ba4c9251e1977986bfe18336feabc8f",
+          "reason": "optional-secret"
+        },
+        {
+          "job": "test_matrix",
+          "step": "vercel/setup-turborepo-remote-cache-action@49d7b1b46ba4c9251e1977986bfe18336feabc8f",
+          "reason": "optional-secret"
+        },
+        {
+          "job": "test_ai_matrix",
+          "step": "vercel/setup-turborepo-remote-cache-action@49d7b1b46ba4c9251e1977986bfe18336feabc8f",
+          "reason": "optional-secret"
+        }
+      ]
+    }
+  },
+  "deleted": [
+    ".github/workflows/ai-provider-api-changes.yml",
+    ".github/workflows/ai-provider-models.yml",
+    ".github/workflows/assign-team-pull-request.yml",
+    ".github/workflows/reconcile-merge-labels.yml",
+    ".github/workflows/release-notifications.yml",
+    ".github/workflows/release.yml",
+    ".github/workflows/slack-team-review-notification.yml",
+    ".github/workflows/slack-workflow-failure-notification.yml",
+    ".github/workflows/tarballs.yml",
+    ".github/workflows/update-model-settings.yml",
+    ".github/workflows/verify-changesets.yml"
+  ]
+}
